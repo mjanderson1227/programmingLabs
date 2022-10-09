@@ -22,7 +22,7 @@ void getVals (point* inp)
 {
     scanf("%lf", &inp->x);
     scanf("%lf", &inp->y);
-    scanf("%lf", &inp ->z);
+    scanf("%lf", &inp->z);
 }
 
 void printVals (point inp, double dist)
