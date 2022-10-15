@@ -7,7 +7,7 @@
 #include <stdlib.h>
 //Employee Struct
 typedef struct {
-    char name[10];
+char name[10];
     int id;
     double salary;
 } Employee;
