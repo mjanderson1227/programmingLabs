@@ -17,7 +17,7 @@ Employee* readData(char* fileName, int* size) {
     Employee* employeeArr = (Employee*)(malloc(sizeof(Employee)*numLines));
     rewind(file);
     //2nd half of the function.
-    //---------------------- //
+    // ---------------------- //
     int i;
     for(i = 0; i < numLines; i++){
         Employee curEmployee;
