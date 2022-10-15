@@ -72,12 +72,15 @@ int main()
         char month[10];
         int day;
         int year;
+        
         //get line into buffer
         char buffer[20];
         fgets(buffer, 20, stdin);
+
         //check the buffer
         if(strstr(buffer, "-1") != NULL) break; //checks if the line is -1
 
+ //Checks to make sure scanf scans enough then adds those to the output string.
         if(sscanf(buffer, "%s %d, %d\n", month, &day, &year)==3) {
             char toAdd[9];
             sprintf(toAdd, "%d/%d/%d\n", GetMonthAsInt(month), day, year);
