@@ -5,14 +5,15 @@ Employee* readData(char* fileName, int* size) {
     FILE* file = fopen(fileName, "r");
     int numLines = 0;
     while(1) {
-        char buffer[20]; 
-        fgets(buffer, 20, file);
-        if (strchr(buffer, EOF) != NULL) {
+        if (fgetc(file)=='\n') {
+            numLines++;
+        }
+        if (fgetc(file)==EOF){
             break;
         }
-        numLines++;
-        /*DEBUG*/ printf("%d", numLines);
+        file = file+1;
     }
+    printf("numLines: %d", numLines);
     *size = numLines;
     Employee* employeeArr = (Employee*)(malloc(sizeof(Employee)*numLines));
     rewind(file);
@@ -36,6 +37,7 @@ Employee getBestEmployee(Employee* employeeArray, int arraySize) {
     for(i = 1; i < arraySize; i++) {
         if (employeeArray[i].salary > curBest.salary) {
             curBest = employeeArray[i];
+            printf("%s", curBest.name);
         }
     }
     return curBest;
