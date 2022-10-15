@@ -1,4 +1,7 @@
 #include "employee.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 Employee* readData(char* fileName, int* size) {
     FILE* file = fopen(fileName, "r");
