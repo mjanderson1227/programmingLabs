@@ -5,16 +5,13 @@
 
 Employee* readData(char* fileName, int* size) {
     FILE* file = fopen(fileName, "r");
-    int numLines = 1;
+    int numLines = 0;
     while(1) {
-        //char buffer[30];
-        char curChar = fgetc(file);
-        if(curChar == EOF) { 
+        char buffer[30];
+        if(fgets(buffer, 30, file) == NULL) {
             break;
         }
-        if(curChar == '\n') {
         numLines++;
-        }
     }
     *size = numLines;
     Employee* employeeArr = (Employee*)(malloc(sizeof(Employee)*numLines));
