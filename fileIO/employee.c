@@ -1,4 +1,4 @@
-#include "Employee.h"
+#include "employee.h"
 
 Employee* readData(char* fileName, int* size) {
     FILE* file = fopen(fileName, "r");
